@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Estimations related to sum over Primes</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Estimations related to sum over Primes</h1>
+</header>
+<p>In the case of a monotonic function <span
+class="math inline">\(f\)</span>, for <span
+class="math inline">\(\sum_{p \le n} f(n)\)</span>, we estimate as
+follows: <span class="math display">\[\sum_{p \le n} f(n)
+  = \int_{1^-}^n f(t) \, \mathrm{d}\pi(t)
+  = \pi(n) f(n) - \int_1^n \pi(t) f&#39;(t) \, \mathrm{d}t,\]</span>
+then we can apply the PNT.</p>
+<p>As for multiplicative functions <span
+class="math inline">\(f\)</span>, namely those of the form <span
+class="math inline">\(f(n) = \chi(n) n^{-s}\)</span>, we can estimate
+<span class="math inline">\(\sum_{p \le n} f(n)\)</span> by using the
+zero-free region of <span class="math inline">\(L(s, \chi)\)</span>.</p>
+<p>In another case where <span class="math inline">\(f\)</span> is
+oscillatory but not multiplicative, for instance <span
+class="math inline">\(f(n) = \mathrm{e(n\alpha)}\)</span>, we apply the
+philosophy of estimation over the bilinear form.</p>
+<p>In 1977, Vaughan found a way of dealing with <span
+class="math display">\[\sum_{n \le x} \Lambda(n) f(n),\]</span> which
+gave a bilinear form of its identity. Let <span class="math inline">\(u
+&gt; 0\)</span>, <span class="math inline">\(n &gt; 0\)</span>, <span
+class="math inline">\(y \ge z\)</span>, and define <span
+class="math display">\[F(s) = \sum_{n \le u} n^{-s},
+  \qquad
+  G(s) = \sum_{m \le v} \mu(m) m^{-s}.\]</span> Then <span
+class="math display">\[\sum_{n} \Lambda(n) f(n) = S_1 - S_2 - S_3 +
+S_4,\]</span> where <span class="math display">\[\begin{aligned}
+&amp;S_1 = \sum_{n \le u} \mu(n) \sum_{n \le m \le x/n} (\log n)
+f(mn),\\
+  &amp;S_2 = \sum_{m \le u} c_m \sum_{n \le x/m} f(mn),
+  \quad c_m = \sum_{\substack{k \le u \\ \ell \le v}} \Lambda(k)
+\mu(\ell),\\
+  &amp;S_3 = \sum_{m \le u} \sum_{\substack{n \le y \\ mn \le x}}
+\Lambda(m)
+        \left( \sum_{\ell \le u} \mu(\ell) \right) f(\ell mn),\\
+  &amp;S_4 = \sum_{n \le u} \Lambda(n) f(n).\end{aligned}\]</span></p>
+<p>This is a direct result followed from the coefficient of <span
+class="math inline">\(n^{-s}\)</span> of the following identity: <span
+class="math display">\[-\frac{\zeta&#39;(s)}{\zeta(s)}
+  = G(s) \left( -\frac{\zeta&#39;(s)}{\zeta(s)} \right)
+    - F(s) G(s) \frac{\zeta&#39;(s)}{\zeta(s)}
+    - \left( -\frac{\zeta&#39;(s)}{\zeta(s)} - F(s) \right) \left( G(s)
+\frac{\zeta&#39;(s)}{\zeta(s)} - 1 \right)
+    + F(s).\]</span></p>
+<p>In applications, we shall bound <span
+class="math inline">\(S_4\)</span> trivially.</p>
+<p>For <span class="math inline">\(S_2\)</span>, note that <span
+class="math display">\[|c_m| = \left| \sum_{\substack{k \le u, \ \ell
+\le v \\ k\ell = m}}
+     \Lambda(k) \mu(\ell) \right|
+  \ \le\ \sum_{\ell \mid m} \Lambda(\ell) = \log m,\]</span> then it
+follows that <span class="math display">\[S_2 \ \ll\ (\log uv) \sum_{m
+\le u} \left| \sum_{\substack{n \le x/m}} f(mn) \right|.\]</span> For
+<span class="math inline">\(S_1\)</span>, we write <span
+class="math display">\[S_1
+  = \sum_{m \le u} \mu(m) \sum_{\substack{n \le x/m}} f(mn) \int_1^n
+\frac{\mathrm{d}t}{t}
+  = \int_1^x \sum_{m \le u} \mu(m) \sum_{\substack{t \le n \le x/m}}
+f(mn) \frac{\mathrm{d}t}{t}\]</span> <span class="math display">\[\ll\ C
+(\log qy) \sum_{m \le u} \max_{t} \sum_{\substack{t \le n \le x/m}}
+f(mn).\]</span></p>
+<p>If we have an inequality of the sort <span
+class="math display">\[\left| \sum_{m,n} a_m b_n f(mn) \right|
+    \ \le\ \Delta \left( \sum_{m} |a_m|^2 \right)^{1/2}
+             \left( \sum_{n} |b_n|^2 \right)^{1/2},\]</span> where <span
+class="math inline">\(\Delta\)</span> depends on the coefficient matrix
+<span class="math inline">\(F = [f(mn)]\)</span>, independent of the
+vectors <span class="math inline">\(a, b\)</span>.</p>
+<p>Then, for <span class="math inline">\(S_3\)</span>, <span
+class="math display">\[S_3 \ \ll\ (\log qy)
+     \left( \max_{u &lt; m \le 2u} \Delta
+            \left( \sum_{m \le 2u} \Lambda(m)^2 \right)^{1/2}
+            \left( \sum_{n \le qy/m} d(n)^2 \right)^{1/2}
+     \right)\]</span> <span class="math display">\[\ \ll\ y^{1/2} (\log
+qy)^3 \max_{u &lt; m \le 2u} \Delta.\]</span></p>
+</body>
+</html>
